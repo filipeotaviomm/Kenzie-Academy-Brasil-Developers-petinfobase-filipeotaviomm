@@ -9,6 +9,8 @@ button {
   border: 1px solid var(--gray600);
   background-color: var(--gray900);
   color: var(--gray100);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .redirect-edit__button:hover {
@@ -27,6 +29,7 @@ button {
 .confirm__button {
   background-color: var(--brand100);
   color: var(--gray900);
+  font-size: 16px;
 }
 
 .confirm__button:hover {

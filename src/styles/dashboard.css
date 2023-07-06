@@ -1,0 +1,184 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  padding: 0px 200px;
+}
+
+.buttonImg__align {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.photo__button {
+  padding: 0;
+  background-color: transparent;
+}
+
+.photo__button > img {
+  width: 50px;
+}
+
+.nav__container {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.nav__container > h3 {
+  display: flex;
+  padding-left: 200px;
+}
+
+.main__container {
+  height: 320px;
+  width: 100%;
+  padding: 40px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postOwner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.postOwner__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postOwner__left > img {
+  width: 41px;
+}
+
+#name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#bar__separation {
+  color: #e9ecef;
+}
+
+#date {
+  color: #868e96;
+}
+
+.postOwner__right {
+  display: flex;
+  gap: 10px;
+}
+
+.post__title {
+  width: 100%;
+}
+
+.post__content {
+  width: 100%;
+}
+
+.postOwner__buttons {
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.edit__button {
+  background-color: white;
+  border: 1px solid #e9ecef;
+}
+
+.edit__button:hover {
+  border: 1px solid black;
+}
+
+.exclude__button {
+  color: #868e96;
+  border: 1px solid transparent;
+}
+
+.exclude__button:hover {
+  border: 1px solid #868e96;
+}
+
+.titleContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.post__title {
+  font-size: 27px;
+  text-align: justify;
+}
+
+.post__content {
+  color: #495057;
+  text-align: justify;
+  max-width: 100%;
+}
+
+.accessPublic__button {
+  color: #364fc7;
+  background-color: transparent;
+  width: 139px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.toast__logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+  gap: 10px;
+  position: absolute;
+  top: 30px;
+  right: 55px;
+  background-color: #fcfeff;
+  width: 130px;
+  height: 80px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #343a40;
+}
+
+.toast__logout > p {
+  color: #868e96;
+}
+
+.toast__align {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.button__logout {
+  background-color: transparent;
+  padding: 0;
+}
+
+.button__logout > img {
+  width: 30px;
+}
+
+.toast__align > p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}

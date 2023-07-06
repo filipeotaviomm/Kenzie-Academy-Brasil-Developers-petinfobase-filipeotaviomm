@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../styles/buttons.css" />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
+    <title>Petinfo - Signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__left">
+        <div class="title-button__align">
+          <h3>Cadastro</h3>
+          <button class="login-back__button">Voltar para o login</button>
+        </div>
+        <form>
+          <div class="inputs">
+            <label for="userSignUp">Usuário</label>
+            <input id="userSignUp" name="username" type="text" placeholder="  Digite seu usuário aqui" />
+          </div>
+          <div class="inputs">
+            <label for="emailSignUp">Email</label>
+            <input id="emailSignUp" name="email" type="text" placeholder=" Digite seu email aqui" />
+          </div>
+          <div class="inputs">
+            <label for="photoLink">Link da foto do perfil</label>
+            <input id="photoLink" name="avatar" type="text" placeholder="  Insira o link aqui" />
+          </div>
+          <div class="inputs">
+            <label for="passwordSignUp">Senha</label>
+            <input id="passwordSignUp" name="password" type="password" placeholder="  Digite sua senha aqui" />
+          </div>
+          <button id="register" type="submit" class="confirm__button">Cadastrar</button>
+        </form>
+        <button id="backButton___bottom" class="login-back__button">Voltar para o login</button>
+      </div>
+
+      <div class="container__right">
+        <h1 class="title__margin-bottom">Petinfo</h1>
+        <h1>
+          <span class="letter__blue">Ooooooba!
+        </h1>
+        <div class="textImg__margin">
+          <p>
+            Agora vamos poder contribuir para o bem estar do seu pet por meio do conhecimento
+          </p>
+          <div class="container__img">
+            <img src="../assets/img-register.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="toast__container hidden">
+        <div class="toast__align">
+          <img src="../assets/visto.svg" alt="">
+          <h4>Sua conta foi criada com sucesso!</h4>
+        </div>
+        <p>Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login</p>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="../scripts/signup.js"></script>
+  </body>
+</html>

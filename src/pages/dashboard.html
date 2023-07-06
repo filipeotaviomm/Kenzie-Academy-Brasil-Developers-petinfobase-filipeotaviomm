@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/buttons.css" />
+    <link rel="stylesheet" href="../styles/modal.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <title>Petinfo - Dashboard</title>
+  </head>
+  <body>
+    <div class="headerContainer">
+      <!-- <header>
+        <div class="header__container">
+          <h2>Petinfo</h2>
+          <div class="buttonImg__align">
+            <button class="confirm__button">Criar publicação</button>
+            <button class="photo__button">
+              <img src="../assets/Ellipse 1.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <div class="nav__container">
+          <h3>Feed</h3>
+        </div>
+      </nav> -->
+    </div>
+    <main>
+      <ul class="postContainer">
+        <!-- <li class="main__container">
+          <div class="postOwner">
+            <div class="postOwner__left">
+              <img src="../assets/Ellipse 2.svg" alt="Foto do perfil" />
+              <p id="name">Rafael Bertoldo</p>
+              <span id="bar__separation">|</span>
+              <p id="date">Outubro de 2022</p>
+            </div>
+            <div class="postOwner__right">
+              <button class="edit__button postOwner__buttons">Editar</button>
+              <button class="exclude__button postOwner__buttons">
+                Excluir
+              </button>
+            </div>
+          </div>
+          <div class="titleContent">
+            <h1 class="post__title">
+              Outubro Rosa: Detalhes sobre a importância da prevenção do câncer
+              de mama em cadelas e gatas
+            </h1>
+            <p class="post__content">
+              Assim como em humanos, cadelas e gatas também podem desenvolver
+              câncer de mama. Ainda hoje, para ambas espécies, o câncer de mama
+              tem maior...
+            </p>
+            <button class="accessPublic__button">Acessar publicação</button>
+          </div>
+        </li>
+
+        <li class="main__container">
+          <div class="postOwner">
+            <div class="postOwner__left">
+              <img src="../assets/Ellipse 2.svg" alt="Foto do perfil" />
+              <p id="name">Rafael Bertoldo</p>
+              <span id="bar__separation">|</span>
+              <p id="date">Outubro de 2022</p>
+            </div>
+            <div class="postOwner__right">
+              <button class="edit__button postOwner__buttons">Editar</button>
+              <button class="exclude__button postOwner__buttons">
+                Excluir
+              </button>
+            </div>
+          </div>
+          <div class="titleContent">
+            <h1 class="post__title">
+              Outubro Rosa: Detalhes sobre a importância da prevenção do câncer
+              de mama em cadelas e gatas
+            </h1>
+            <p class="post__content">
+              Assim como em humanos, cadelas e gatas também podem desenvolver
+              câncer de mama. Ainda hoje, para ambas espécies, o câncer de mama
+              tem maior...
+            </p>
+            <button class="accessPublic__button">Acessar publicação</button>
+          </div>
+        </li> -->
+      </ul>
+    </main>
+
+    <section class="toast__logout hidden">
+      <p>@bertoldo</p>
+      <div class="toast__align">
+        <button class="button__logout">
+          <img src="../assets/logout.png" alt="" />
+        </button>
+        <p>Logout</p>
+      </div>
+    </section>
+
+    <dialog class="modalController__createPost">
+      <div class="modal__container-createPost">
+        <div class="modal__head">
+          <h3>Criando novo post</h3>
+          <button class="closeCreatePostModal">X</button>
+        </div>
+        <form>
+          <div class="postTitleContainer">
+            <label for="postTitle">Título do post</label>
+            <input
+              id="postTitle"
+              class="add__input"
+              name="title"
+              type="text"
+              placeholder="  Digite o título aqui..."
+            />
+          </div>
+          <div class="postContentContainer">
+            <label for="postContent">Conteúdo do post</label>
+            <textarea
+              id="postContent"
+              class="add__input"
+              name="content"
+              placeholder=" Desenvolva o conteúdo do post aqui..."
+            ></textarea>
+          </div>
+          <div class="cancelPublishButton">
+            <button class="closeCreatePostModal" id="cancelButton">
+              Cancelar
+            </button>
+            <button type="submit" class="publishButton">Publicar</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog class="modalController__editPost">
+      <div class="modal__container-editPost">
+        <div class="modal__head">
+          <h3>Edição</h3>
+          <button class="closeEditPostModal">X</button>
+        </div>
+        <form>
+          <div class="postTitleContainer">
+            <label for="postTitle">Título do post</label>
+            <input
+              id="titleUpdate"
+              class="update__input"
+              name="title"
+              type="text"
+              placeholder="  Digite o título aqui..."
+            />
+          </div>
+          <div class="postContentContainer">
+            <label for="postContent">Conteúdo do post</label>
+            <textarea
+              id="descriptionUpdate"
+              class="update__input"
+              name="description"
+              type="text"
+              placeholder=" Desenvolva o conteúdo do post aqui..."
+            ></textarea>
+          </div>
+          <div class="cancelPublishButton">
+            <button class="closeEditPostModal" id="cancelButton">
+              Cancelar
+            </button>
+            <button type="submit" class="saveButton">Salvar Alterações</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog class="modalController__excludePost">
+      <div class="modal__container-excludePost">
+        <div class="modal__head">
+          <h3>Confirmação de exclusão</h3>
+          <button class="closeExcludePostModal">X</button>
+        </div>
+        <div class="align__h2P">
+          <h2>Tem certeza que deseja excluir este post?</h2>
+          <p>
+            Essa ação não poderá ser desfeita, então pedimos que tenha cautela
+            antes de concluir
+          </p>
+        </div>
+        <div class="cancelExcludeButton">
+          <button class="closeExcludePostModal" id="cancelButton">
+            Cancelar
+          </button>
+          <button id="excludeConfirmationButton">Sim, excluir este post</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modalController__displayPost">
+      <div class="modal__container-displayPost">
+        <div class="modal__head">
+          <div class="postOwner__left">
+            <img
+              class="photo__avatar-modal"
+              src="../assets/Ellipse 2.svg"
+              alt=""
+            />
+            <p class="nameUser">Rafael Bertoldo</p>
+            <span id="bar__separation">|</span>
+            <p class="date">Outubro de 2022</p>
+          </div>
+          <div>
+            <button class="closePost__button">X</button>
+          </div>
+        </div>
+        <div class="post__title-content">
+          <h1 class="post__title-modal">
+            Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de
+            mama em cadelas e gatas
+          </h1>
+          <p class="post__content-modal">
+            Assim como em humanos, cadelas e gatas também podem desenvolver
+            câncer de mama. Ainda hoje, para ambas espécies, o câncer de mama
+            tem maior...
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="module" src="../scripts/dashboard.js"></script>
+    <script type="module" src="../scripts/modal.js"></script>
+  </body>
+</html>

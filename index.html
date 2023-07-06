@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./src/styles/buttons.css" />
+    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <title>Petinfo - login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__left">
+        <h1 class="title__margin-bottom">Petinfo</h1>
+        <h1>
+          <span class="letter__blue">Amor </span> e
+          <span class="letter__blue"> carinho</span> por meio do conhecimento
+        </h1>
+        <div class="textImg__margin">
+          <p>
+            Todas as informações para melhorar a vida do seu pet em um só lugar
+          </p>
+          <div class="container__img">
+            <img src="./src/assets/img-login.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="container__right">
+        <h3>Login</h3>
+        <form>
+          <div class="inputs">
+            <label for="emailAddress">Email</label>
+            <input id="emailAddress" name="email" type="text" />
+          </div>
+          <div class="inputs">
+            <label for="passwordLogin">Senha</label>
+            <input id="passwordLogin" name="password" type="password" />
+          </div>
+          <button type="submit" class="confirm__button">Acessar</button>
+        </form>
+        <div class="p__alignCenter">
+          <p id="p__bold">Ainda não possui conta?</p>
+          <p>Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+        </div>
+        <button id="button__signup" class="redirect-edit__button">
+          Cadastrar
+        </button>
+      </div>
+    </div>
+
+    <section class="toast__container hidden">
+      <div class="toast__align">
+        <img src="./src/assets/visto.svg" alt="" />
+        <h4>Login realizado com sucesso!</h4>
+      </div>
+      <p>Você será direcionado para o Dashboard</p>
+    </section>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="module" src="./src/scripts/index.js"></script>
+  </body>
+</html>
