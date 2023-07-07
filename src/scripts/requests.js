@@ -48,7 +48,7 @@ export const loginRequest = async (loginBody) => {
         setTimeout(() => {
           location.replace("./src/pages/dashboard.html");
           toastDisplay.classList.add("hidden");
-        }, 3000);
+        }, 4000);
         return responseJson;
       } else {
         throw new Error(responseJson.message);

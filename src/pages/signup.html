@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/buttons.css" />
     <link rel="stylesheet" href="../styles/globalStyles.css" />
     <link rel="stylesheet" href="../styles/signup.css" />
+    <link rel="icon" href="../assets/dog.png" />
     <title>Petinfo - Signup</title>
   </head>
   <body>
@@ -34,9 +35,14 @@
             <label for="passwordSignUp">Senha</label>
             <input id="passwordSignUp" name="password" type="password" placeholder="  Digite sua senha aqui" />
           </div>
-          <button id="register" type="submit" class="confirm__button">Cadastrar</button>
+          <div class="divButtons">
+            <button id="register" type="submit" class="confirm__button">Cadastrar</button>
+            <button id="backButton___bottom" class="login-back__button redirect-edit__button">Voltar para o login</button>
+          </div>
+          <div class="divSpinnerSignup hiddenSpinnerSignup">
+            <img class="spinnerSignup" src="../assets/dog.png" alt="" />
+          </div>
         </form>
-        <button id="backButton___bottom" class="login-back__button">Voltar para o login</button>
       </div>
 
       <div class="container__right">

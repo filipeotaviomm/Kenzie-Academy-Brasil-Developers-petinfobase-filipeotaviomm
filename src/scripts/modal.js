@@ -1,6 +1,11 @@
 import { handleCreatePost } from "./dashboard.js";
 import { renderPosts } from "./render.js";
-import { getAllPosts, updatePostById, red } from "./requests.js";
+import {
+  getAllPosts,
+  updatePostById,
+  deletePostbyId,
+  red,
+} from "./requests.js";
 import { toastEmptyInput } from "./toast.js";
 
 const closeCreatePostModal = () => {
@@ -28,8 +33,8 @@ export const handleModalcreatePost = () => {
   createPostButton.addEventListener("click", () => {
     modalController.showModal();
     closeCreatePostModal();
-    handleCreatePost();
   });
+  handleCreatePost();
 };
 
 const closeEditPostModal = () => {
@@ -49,17 +54,17 @@ const closeEditPostModal = () => {
   });
 };
 
-const updateEditedPost = () => {
+export const updateEditedPost = () => {
   const buttonSave = document.querySelector(".saveButton");
   const inputTitle = document.querySelector("#titleUpdate");
   const inputContent = document.querySelector("#descriptionUpdate");
-  const postId = localStorage.getItem("@petInfo:postId");
   const modalEditPost = document.querySelector(".modalController__editPost");
   let postBody = {};
   let count = 0;
 
   buttonSave.addEventListener("click", async (e) => {
     e.preventDefault();
+    const postId = localStorage.getItem("@petInfo:postId");
 
     if (inputTitle.value === "" || inputContent.value === "") {
       count++;
@@ -86,17 +91,15 @@ const updateEditedPost = () => {
 
 export const handleModalEditPost = () => {
   const editButtons = document.querySelectorAll(".edit__button");
-  console.log(editButtons);
   const modalEditPost = document.querySelector(".modalController__editPost");
   const inputTitle = document.querySelector("#titleUpdate");
   const inputContent = document.querySelector("#descriptionUpdate");
-  console.log("edit");
 
   editButtons.forEach((button) => {
     button.addEventListener("click", async (e) => {
       const datasetButton = e.target.dataset.editId;
-      const allposts = await getAllPosts();
-      allposts.forEach((post) => {
+      const allPosts = await getAllPosts();
+      allPosts.forEach((post) => {
         if (post.id === datasetButton) {
           inputTitle.value = post.title;
           inputContent.value = post.content;
@@ -104,10 +107,9 @@ export const handleModalEditPost = () => {
         }
       });
       modalEditPost.showModal();
-      updateEditedPost();
-      closeEditPostModal();
     });
   });
+  closeEditPostModal();
 };
 
 const closeExcludeModal = () => {
@@ -118,8 +120,26 @@ const closeExcludeModal = () => {
 
   closeButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      localStorage.removeItem("@petInfo:postId");
       modalContainer.close();
     });
+  });
+};
+
+export const excludePost = () => {
+  const confirmationExcludeButton = document.querySelector(
+    "#excludeConfirmationButton"
+  );
+  const modalController = document.querySelector(
+    ".modalController__excludePost"
+  );
+
+  confirmationExcludeButton.addEventListener("click", async () => {
+    const postId = localStorage.getItem("@petInfo:postId");
+    await deletePostbyId(postId);
+    renderPosts();
+    modalController.close();
+    localStorage.removeItem("@petInfo:postId");
   });
 };
 
@@ -130,11 +150,12 @@ export const handleExcludePostModal = () => {
   );
 
   excludeButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+      const datasetButtonExclude = e.target.dataset.excludeId;
+      localStorage.setItem("@petInfo:postId", datasetButtonExclude);
       modalContainer.showModal();
     });
   });
-
   closeExcludeModal();
 };
 

@@ -2,10 +2,13 @@
   width: 910px;
 } */
 
+.modalController__createPost {
+  border: none;
+}
+
 .modal__container-createPost {
   height: 450px;
   padding: 10px;
-  border: none;
 }
 
 .modal__head {
@@ -86,8 +89,15 @@ textarea::placeholder {
   margin-top: 10px;
 }
 
-/* .publishButton {
-} */
+.publishButton {
+  background-color: var(--brand100);
+  color: var(--gray900);
+  font-size: 14px;
+}
+
+.publishButton:hover {
+  background-color: var(--brand200);
+}
 
 #cancelButton {
   border-radius: 4px;
@@ -102,10 +112,14 @@ textarea::placeholder {
 }
 
 /*________________________________*/
+
+.modalController__editPost {
+  border: none;
+}
+
 .modal__container-editPost {
   height: 450px;
   padding: 10px;
-  border: none;
 }
 .saveButton {
   background-color: var(--brand100);
@@ -120,10 +134,14 @@ textarea::placeholder {
 }
 
 /*________________________________*/
+
+.modalController__excludePost {
+  border: none;
+}
+
 .modal__container-excludePost {
   height: 220px;
   padding: 10px;
-  border: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -158,10 +176,13 @@ textarea::placeholder {
 
 /*________________________________*/
 
+.modalController__displayPost {
+  border: none;
+}
+
 .modal__container-displayPost {
   height: 100%;
   padding: 10px;
-  border: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -203,4 +224,5 @@ textarea::placeholder {
 
 .post__content-modal {
   text-align: justify;
+  white-space: pre-wrap;
 }

@@ -13,6 +13,9 @@ const handleLogin = () => {
   const inputs = document.querySelectorAll("input");
   const enterButton = document.querySelector(".confirm__button");
   const loginBody = {};
+  const hidenDiv = document.querySelector(".p__alignCenter");
+  const hidenSpinner = document.querySelector(".divSpinner");
+
   let count = 0;
 
   enterButton.addEventListener("click", async (e) => {
@@ -33,6 +36,8 @@ const handleLogin = () => {
         red
       );
     } else {
+      hidenDiv.classList.add("hiddenDiv");
+      hidenSpinner.classList.remove("hiddenSpinner");
       await loginRequest(loginBody);
       await getUserProfileInfos();
     }

@@ -5,6 +5,8 @@ const handleNewUser = () => {
   const inputs = document.querySelectorAll("input");
   const registerButton = document.querySelector("#register");
   let count = 0;
+  const divBtns = document.querySelector(".divButtons");
+  const spinnerSignup = document.querySelector(".divSpinnerSignup");
   const newUser = {};
 
   registerButton.addEventListener("click", async (e) => {
@@ -26,6 +28,8 @@ const handleNewUser = () => {
       );
     } else {
       await createUser(newUser);
+      spinnerSignup.classList.remove("hiddenSpinnerSignup");
+      divBtns.classList.add("fadeAway");
     }
   });
 };

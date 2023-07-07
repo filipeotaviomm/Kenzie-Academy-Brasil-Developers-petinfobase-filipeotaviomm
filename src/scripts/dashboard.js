@@ -1,5 +1,9 @@
 import { renderHeader, renderPosts } from "./render.js";
-import { handleModalcreatePost } from "./modal.js";
+import {
+  handleModalcreatePost,
+  updateEditedPost,
+  excludePost,
+} from "./modal.js";
 import { toastEmptyInput } from "./toast.js";
 import {
   createPost,
@@ -8,12 +12,6 @@ import {
   getUserProfileInfos,
   red,
 } from "./requests.js";
-
-// const userInfo = await getUserProfileInfos();
-// console.log(userInfo);
-
-// const posts = await getAllPosts();
-// console.log(posts);
 
 export const handleCreatePost = () => {
   const modalContainer = document.querySelector(".modalController__createPost");
@@ -90,6 +88,8 @@ renderPosts();
 authentication();
 logoutOpenCard();
 handleModalcreatePost();
+updateEditedPost();
+excludePost();
 
 // updatePostById("466993f0-7be0-47c6-b108-999d2e924a7d", {
 //   title: "Teste de atualização",

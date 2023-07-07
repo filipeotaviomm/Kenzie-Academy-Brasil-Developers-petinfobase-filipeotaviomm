@@ -51,7 +51,6 @@ export const renderHeader = () => {
 };
 
 export const renderPosts = async () => {
-  // const user = JSON.parse(localStorage.getItem("@petInfo:user"));
   const arrayProfile = await getUserProfileInfos();
   const arrayPosts = await getAllPosts();
   const arrayPostsReverse = arrayPosts.reverse();
@@ -64,7 +63,6 @@ export const renderPosts = async () => {
     ulPostContainer.append(create);
   });
 
-  console.log("render");
   handleModalEditPost();
   handleExcludePostModal();
   handleOpenPostModal();
@@ -87,6 +85,7 @@ const createPost = (profileInfo, posts) => {
     buttonEdit.dataset.editId = posts.id;
     buttonExclude.innerHTML = "Excluir";
     buttonExclude.classList.add("exclude__button", "postOwner__buttons");
+    buttonExclude.dataset.excludeId = posts.id;
     divPostOwnerRight.classList.add("postOwner__right");
     divPostOwnerRight.append(buttonEdit, buttonExclude);
   }

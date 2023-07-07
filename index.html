@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./src/styles/buttons.css" />
     <link rel="stylesheet" href="./src/styles/globalStyles.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="icon" href="./src/assets/dog.png" />
     <title>Petinfo - login</title>
   </head>
   <body>
@@ -45,13 +46,16 @@
           </div>
           <button type="submit" class="confirm__button">Acessar</button>
         </form>
+        <div class="divSpinner hiddenSpinner">
+          <img class="spinner" src="./src/assets/dog.png" alt="" />
+        </div>
         <div class="p__alignCenter">
           <p id="p__bold">Ainda não possui conta?</p>
           <p>Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+          <button id="button__signup" class="redirect-edit__button">
+            Cadastrar
+          </button>
         </div>
-        <button id="button__signup" class="redirect-edit__button">
-          Cadastrar
-        </button>
       </div>
     </div>
 
